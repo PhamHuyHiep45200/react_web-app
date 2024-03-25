@@ -1,31 +1,49 @@
-import React from 'react';
+import React from "react";
 import {
-    Page,
-    Navbar,
-    NavLeft,
-    NavTitle,
-    NavRight,
-    Link,
-    Toolbar,
-    Block,
-    BlockTitle,
-    List,
-    ListItem,
-    Row,
-    Col,
-    Button
-} from 'framework7-react';
+  Page,
+  Navbar,
+  NavLeft,
+  NavTitle,
+  NavRight,
+  Link,
+  Toolbar,
+  Block,
+  BlockTitle,
+  List,
+  ListItem,
+  Row,
+  Col,
+  Button,
+} from "framework7-react";
+import { useDispatch, useSelector } from "react-redux";
+import { increment } from "../../store/slice/couterSlice";
 
-export default () => {
+export default ({ f7router }) => {
+  const { value } = useSelector((state) => state.counter);
+  const dispatch = useDispatch();
+  const redirect = () => {
+    f7router.navigate("/about/");
+  };
+  const addCounter = () => {
+    dispatch(increment())
+  }
   return (
     <Page>
       <Navbar>
         <NavLeft>
-          <Link iconIos="f7:menu" iconMd="material:menu" panelOpen="left"></Link>
+          <Link
+            iconIos="f7:menu"
+            iconMd="material:menu"
+            panelOpen="left"
+          ></Link>
         </NavLeft>
         <NavTitle>My App</NavTitle>
         <NavRight>
-          <Link iconIos="f7:menu" iconMd="material:menu" panelOpen="right"></Link>
+          <Link
+            iconIos="f7:menu"
+            iconMd="material:menu"
+            panelOpen="right"
+          ></Link>
         </NavRight>
       </Navbar>
       <Toolbar>
@@ -35,6 +53,10 @@ export default () => {
       <Block strong>
         <p>Here is your blank Framework7 app. Let's see what we have here.</p>
       </Block>
+      <Button onClick={addCounter} className='!text-[red]'>add {value}</Button>
+      <Button onClick={redirect} className="!text-[red]">
+        redirect about
+      </Button>
       <BlockTitle>Navigation</BlockTitle>
       <List>
         <ListItem link="/about/" title="About"></ListItem>
@@ -44,10 +66,14 @@ export default () => {
       <Block strong>
         <Row>
           <Col width="50">
-            <Button fill raised popupOpen="#popup">Popup</Button>
+            <Button fill raised popupOpen="#popup">
+              Popup
+            </Button>
           </Col>
           <Col width="50">
-            <Button fill raised loginScreenOpen="#login-screen">Login Screen</Button>
+            <Button fill raised loginScreenOpen="#login-screen">
+              Login Screen
+            </Button>
           </Col>
         </Row>
       </Block>
@@ -55,17 +81,27 @@ export default () => {
       <Block strong>
         <Row>
           <Col width="50">
-            <Button fill raised panelOpen="left">Left Panel</Button>
+            <Button fill raised panelOpen="left">
+              Left Panel
+            </Button>
           </Col>
           <Col width="50">
-            <Button fill raised panelOpen="right">Right Panel</Button>
+            <Button fill raised panelOpen="right">
+              Right Panel
+            </Button>
           </Col>
         </Row>
       </Block>
       <List>
-        <ListItem link="/dynamic-route/blog/45/post/125/?foo=bar#about" title="Dynamic Route"></ListItem>
-        <ListItem link="/load-something-that-doesnt-exist/" title="Default Route (404)"></ListItem>
+        <ListItem
+          link="/dynamic-route/blog/45/post/125/?foo=bar#about"
+          title="Dynamic Route"
+        ></ListItem>
+        <ListItem
+          link="/load-something-that-doesnt-exist/"
+          title="Default Route (404)"
+        ></ListItem>
       </List>
     </Page>
-  )
+  );
 };
