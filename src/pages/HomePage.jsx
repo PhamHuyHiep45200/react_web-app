@@ -8,7 +8,6 @@ export default function HomePage({ f7router }) {
   const dispatch = useDispatch();
 
   const redirect = () => {
-    console.log("ok");
     router.navigate("/about/");
   };
 
