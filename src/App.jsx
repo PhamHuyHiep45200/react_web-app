@@ -1,23 +1,11 @@
 import React from "react";
-import {
-  App,
-  Panel,
-  View,
-  Statusbar,
-  Popup,
-  Page,
-  Navbar,
-  NavRight,
-  Link,
-  Block,
-  Toolbar,
-} from "framework7-react";
+import { App, View, Link, Toolbar } from "framework7-react";
 
-import routes from "../routes";
+import routes from "./routes";
 import { useDispatch, useSelector } from "react-redux";
-import { decrement, increment } from "../store/slice/couterSlice";
+import { decrement, increment } from "./store/slice/couter.slice";
 
-export default function (props) {
+export default function AppReact () {
   const { value } = useSelector((state) => state.counter);
   const dispatch = useDispatch();
   // Framework7 parameters here
@@ -49,7 +37,7 @@ export default function (props) {
       >
         <Toolbar>
           <Link onClick={minusCounter}>minus</Link>
-          {value ? value : '0'}
+          {value ? value : "0"}
           <Link onClick={plusCounter}>add</Link>
         </Toolbar>
       </div>

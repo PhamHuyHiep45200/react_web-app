@@ -1,10 +1,10 @@
-import HomePage from './components/pages/HomePage';
-import AboutPage from './components/pages/AboutPage';
-import FormPage from './components/pages/FormPage';
-import DynamicRoutePage from './components/pages/DynamicRoutePage';
-import NotFoundPage from './components/pages/NotFoundPage';
-import PanelLeftPage from './components/pages/PanelLeftPage';
-import PanelRightPage from './components/pages/PanelRightPage';
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import FormPage from './pages/FormPage';
+import DynamicRoutePage from './pages/DynamicRoutePage';
+import NotFoundPage from './pages/NotFoundPage';
+import PanelLeftPage from './pages/PanelLeftPage';
+import PanelRightPage from './pages/PanelRightPage';
 
 export default [
   {

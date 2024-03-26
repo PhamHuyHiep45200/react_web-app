@@ -14,7 +14,7 @@ import {
   Block
 } from 'framework7-react';
 
-export default () => (
+const FormPage = () => (
   <Page>
     <Navbar title="Form" backLink="Back" />
     <BlockTitle>Form Example</BlockTitle>
@@ -120,3 +120,5 @@ export default () => (
     </Block>
   </Page>
 );
+
+export default FormPage
