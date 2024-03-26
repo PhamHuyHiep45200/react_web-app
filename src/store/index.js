@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
-import counterReducer from './slice/couterSlice'
-import commonSlice from './slice/commonSlice'
+import counterReducer from './slice/couter.slice'
+import commonSlice from './slice/common.slice'
 
 export const store = configureStore({
   reducer: {

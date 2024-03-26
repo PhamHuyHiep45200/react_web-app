@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Page, Row, Col, Card } from "framework7-react";
 import { useDispatch, useSelector } from "react-redux";
-import { setRouter } from "../../store/slice/commonSlice";
+import { setRouter } from "../../store/slice/common.slice";
 
 export default ({ f7router }) => {
   const { router } = useSelector((state) => state.common);

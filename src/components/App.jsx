@@ -15,7 +15,7 @@ import {
 
 import routes from "../routes";
 import { useDispatch, useSelector } from "react-redux";
-import { decrement, increment } from "../store/slice/couterSlice";
+import { decrement, increment } from "../store/slice/couter.slice";
 
 export default function (props) {
   const { value } = useSelector((state) => state.counter);
@@ -49,7 +49,7 @@ export default function (props) {
       >
         <Toolbar>
           <Link onClick={minusCounter}>minus</Link>
-          {value ? value : '0'}
+          {value ? value : "0"}
           <Link onClick={plusCounter}>add</Link>
         </Toolbar>
       </div>
