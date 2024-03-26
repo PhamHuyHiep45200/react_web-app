@@ -68,3 +68,7 @@
   font-feature-settings: "liga";
   text-align: center;
 }
+
+.text-red {
+  color: red;
+}
