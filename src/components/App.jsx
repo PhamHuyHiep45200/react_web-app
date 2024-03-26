@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   App,
   Panel,
@@ -10,61 +10,50 @@ import {
   NavRight,
   Link,
   Block,
-  LoginScreen,
-  LoginScreenTitle,
-  List,
-  ListItem,
-  Label,
-  Input,
-  ListButton,
-  BlockFooter,
-  Button,
-} from 'framework7-react';
+  Toolbar,
+} from "framework7-react";
 
-import routes from '../routes';
+import routes from "../routes";
+import { useDispatch, useSelector } from "react-redux";
+import { decrement, increment } from "../store/slice/couterSlice";
 
 export default function (props) {
-
+  const { value } = useSelector((state) => state.counter);
+  const dispatch = useDispatch();
   // Framework7 parameters here
   const f7params = {
-    id: 'io.framework7.testapp', // App bundle ID
-    name: 'Framework7', // App name
-    theme: 'auto', // Automatic theme detection
+    id: "io.framework7.testapp", // App bundle ID
+    name: "Framework7", // App name
+    theme: "auto", // Automatic theme detection
     // App routes
     routes,
+  };
+  const plusCounter = () => {
+    dispatch(increment());
+  };
+  const minusCounter = () => {
+    dispatch(decrement());
   };
 
   return (
     <App params={f7params}>
-      {/* Statusbar */}
-      <Statusbar />
-
-      {/* Left Panel */}
-      <Panel left cover themeDark>
-        <View url="/panel-left/" />
-      </Panel>
-
-      {/* Right Panel */}
-      <Panel right reveal themeDark>
-        <View url="/panel-right/"/>
-      </Panel>
-
-      {/* Main View */}
-      <View id="main-view" url="/" main className="ios-edges"/>
-
-      {/* Popup */}
-      <Popup id="popup">
-        <View>
-          <Page>
-            <Navbar title="Popup">
-              <NavRight>
-                <Link popupClose>Close</Link>
-              </NavRight>
-            </Navbar>
-            <Block>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, architecto. Cupiditate laudantium rem nesciunt numquam, ipsam. Voluptates omnis, a inventore atque ratione aliquam. Omnis iusto nemo quos ullam obcaecati, quod.</Block>
-          </Page>
-        </View>
-      </Popup>
+      <View id="main-view" url="/" main className="ios-edges" />
+      <div
+        style={{
+          position: "fixed",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: "44px",
+          zIndex: 10000,
+        }}
+      >
+        <Toolbar>
+          <Link onClick={minusCounter}>minus</Link>
+          {value ? value : '0'}
+          <Link onClick={plusCounter}>add</Link>
+        </Toolbar>
+      </div>
     </App>
   );
-};
+}
