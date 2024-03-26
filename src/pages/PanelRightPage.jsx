@@ -1,7 +1,7 @@
 import React from 'react';
 import { Page, Navbar, Block, BlockTitle, List, ListItem } from 'framework7-react';
 
-export default () => (
+const PanelRightPage = () => (
   <Page>
     <Navbar title="Right Panel" />
     <Block strong>
@@ -19,3 +19,5 @@ export default () => (
     </List>
   </Page>
 );
+
+export default PanelRightPage
