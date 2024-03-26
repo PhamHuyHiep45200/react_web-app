@@ -15,10 +15,10 @@ import App from "./components/App.jsx";
 import "framework7/css/framework7.min.css";
 
 // Icons
-import "./css/icons.css";
+import "./css/index.css";
 
 // Custom app styles
-import "./css/app.css";
+import "./css/index.scss";
 
 import "react-hot-loader/patch";
 import { AppContainer } from "react-hot-loader";

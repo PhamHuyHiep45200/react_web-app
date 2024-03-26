@@ -1,19 +1,6 @@
 import React, { useEffect } from "react";
-import {
-  Page,
-  Block,
-  BlockTitle,
-  List,
-  ListItem,
-  Row,
-  Col,
-  Button,
-  Card,
-  CardHeader,
-  NavTitle,
-} from "framework7-react";
+import { Page, Row, Col, Card } from "framework7-react";
 import { useDispatch, useSelector } from "react-redux";
-import { increment } from "../../store/slice/couterSlice";
 import { setRouter } from "../../store/slice/commonSlice";
 
 export default ({ f7router }) => {
@@ -54,10 +41,10 @@ export default ({ f7router }) => {
       <Row>
         {carts.map((e, i) => (
           <Col width={50} key={i}>
-            <div onClick={redirect}>
+            <div onClick={redirect} className="card-container">
               <Card>
                 <img src={e.img} style={{ width: "100%" }} />
-                <CardHeader>{e.title}</CardHeader>
+                <div className="p-5">{e.title}</div>
               </Card>
             </div>
           </Col>

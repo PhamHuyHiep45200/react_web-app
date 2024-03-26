@@ -22,10 +22,9 @@ export default function (props) {
   const dispatch = useDispatch();
   // Framework7 parameters here
   const f7params = {
-    id: "io.framework7.testapp", // App bundle ID
-    name: "Framework7", // App name
-    theme: "auto", // Automatic theme detection
-    // App routes
+    id: "io.framework7.testapp",
+    name: "Framework7",
+    theme: "auto",
     routes,
   };
   const plusCounter = () => {
