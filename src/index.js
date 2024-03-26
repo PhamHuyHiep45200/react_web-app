@@ -9,7 +9,7 @@ import Framework7 from "framework7/framework7.esm.bundle";
 import Framework7React from "framework7-react";
 
 // Import main App component
-import App from "./components/App.jsx";
+import App from "./App.jsx";
 
 // Framework7 styles
 import "framework7/css/framework7.min.css";
@@ -38,7 +38,7 @@ ReactDOM.render(
 
 if (module.hot) {
   module.hot.accept("./components/App", () => {
-    const NextApp = require("./components/App").default;
+    const NextApp = require("./App.jsx").default;
     ReactDOM.render(
       <AppContainer>
         <NextApp />

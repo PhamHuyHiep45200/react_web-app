@@ -13,9 +13,9 @@ import {
   Toolbar,
 } from "framework7-react";
 
-import routes from "../routes";
+import routes from "./routes";
 import { useDispatch, useSelector } from "react-redux";
-import { decrement, increment } from "../store/slice/couter.slice";
+import { decrement, increment } from "./store/slice/couter.slice";
 
 export default function (props) {
   const { value } = useSelector((state) => state.counter);
